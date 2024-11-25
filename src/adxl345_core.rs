@@ -79,7 +79,6 @@ impl I2CDriverCallbacks for Adxl345Driver{
             self.this_module(),
         ).expect("Failed during chard dev registration");
 
-        //pr_info!("Registration address: {:p}", registration);
         pr_info!("adxl345driver address {:p} \n", self);
 
         // Assign the `registration` field in `Adxl345`

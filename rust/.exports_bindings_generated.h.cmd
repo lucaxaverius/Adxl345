@@ -1,0 +1,1 @@
+savedcmd_rust/exports_bindings_generated.h := llvm-nm -p --defined-only rust/bindings.o | grep -E ' (T|R|D) ' | cut -d ' ' -f 3 | xargs -Isymbol echo 'EXPORT_SYMBOL_RUST_GPL(symbol);' > rust/exports_bindings_generated.h

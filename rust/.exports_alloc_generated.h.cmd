@@ -1,0 +1,1 @@
+savedcmd_rust/exports_alloc_generated.h := llvm-nm -p --defined-only rust/alloc.o | grep -E ' (T|R|D) ' | cut -d ' ' -f 3 | xargs -Isymbol echo 'EXPORT_SYMBOL_RUST_GPL(symbol);' > rust/exports_alloc_generated.h

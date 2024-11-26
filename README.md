@@ -13,7 +13,7 @@ The primary objectives of the project were:
 3) **User-Space Testing**:  Provide a user-space program to interact with the driver and validate its functionality.
 
 ## Repository Structure
-- **rust/**: Rust kernel source, includes the I2C Abastractions.
+- **rust/kernel**: Rust kernel source, includes the I2C Abastractions.
 - **src/**: Source code for the ADXL345 Rust Driver.
 - **adxl345_test/**: User-space test program that permits to interact with the driver.
 - **add-dev.sh**: Script that adds the file associated to the char device.

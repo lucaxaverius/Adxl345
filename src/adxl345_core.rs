@@ -34,14 +34,17 @@ module! {
 }
 
 mod fileops;
+pub(crate) mod utility;
+pub(crate) mod structures;
+pub(crate) mod constant;
 
 use kernel::prelude::*;
 use kernel::sync::{Arc,SpinLock};
 use kernel::i2c::*;
 use kernel::{i2c_module_device_table,spinlock_init};
-use crate::fileops::utility::structures::constant::*;
-use crate::fileops::utility::structures::{Adxl345Driver, Adxl345};
-use crate::fileops::utility::{adxl345_device_init,adxl345_device_clean};
+use crate::constant::*;
+use crate::structures::{Adxl345Driver, Adxl345};
+use crate::utility::{adxl345_device_init,adxl345_device_clean};
 use crate::fileops::{adxl345_chardev_add, DEVICE_PTR};
 
 // Define the I2C board information with device name and address.

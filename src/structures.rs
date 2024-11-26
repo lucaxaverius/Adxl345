@@ -19,11 +19,10 @@
  */
 
 // structures.rs
-pub(crate) mod constant;
 
 use kernel::prelude::*;
 use kernel::i2c::{I2CClient, I2CDriver};
-use crate::fileops::utility::structures::constant::*; // Import the `constant` module for use in this file.
+use crate::constant::*; // Import the `constant` module for use in this file.
 use kernel::chrdev::{Registration};
 use kernel::error::code::{EINVAL};
 use kernel::sync::{Arc, SpinLock};

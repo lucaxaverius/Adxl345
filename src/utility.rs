@@ -1,4 +1,4 @@
-/* 
+ /* 
  * Copyright 2024 Luca Saverio Esposito, Università di Roma, Tor Vergata 
  * email: <lucasaverioesposito@gmail.com>
  *
@@ -20,15 +20,14 @@
 
 
 // utility.rs
-pub(crate) mod structures;
 
 use kernel::prelude::*;
 use core::time::Duration;
 use kernel::sync::{SpinLock, Arc};
 use kernel::delay::coarse_sleep;
 use kernel::error::Result;
-use crate::fileops::utility::structures::*;
-use crate::fileops::utility::structures::constant::*;
+use crate::structures::*;
+use crate::constant::*;
 
 /// Function that initializes an ADXL345 device with default configuration and performs a test read.
 ///

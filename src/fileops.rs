@@ -21,7 +21,6 @@
 
 // fileops.rs
 
-pub(crate) mod utility;
 
 use kernel::prelude::*;
 use kernel::sync::{Mutex, SpinLock, Arc};
@@ -32,8 +31,8 @@ use kernel::error::{Result};
 use kernel::error::code::{EINVAL, EAGAIN, EIO};
 use kernel::ForeignOwnable;
 use core::time::Duration;
-use crate::fileops::utility::structures::{Adxl345Sample, Adxl345};
-use crate::fileops::utility::{adxl345_device_init_at_open,adxl345_device_clean_at_release};
+use crate::structures::{Adxl345Sample, Adxl345};
+use crate::utility::{adxl345_device_init_at_open,adxl345_device_clean_at_release};
 use kernel::delay::coarse_sleep;
 use kernel::io_buffer::IoBufferWriter;
 use kernel::{mutex_init};
@@ -81,6 +80,7 @@ fn adxl345_filter_out(new_sample: &Adxl345Sample) -> bool {
 
 pub (crate) struct Adxl345FileOps {
 }
+// Mandatory by design, see file.rs/operations
 unsafe impl Send for Adxl345FileOps{}
 unsafe impl Sync for Adxl345FileOps{}
 
